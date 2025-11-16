@@ -1,5 +1,9 @@
 package com.zuqongtch.constant;
 
-public class PaymentStatus {
-
+public enum PaymentStatus {
+    PENDING,
+    PROCESSING,
+    COMPLETED,
+    FAILED,
+    REFUNDED
 }

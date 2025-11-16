@@ -1,5 +1,18 @@
+
 package com.zuqongtch.repository;
 
-public class MenuItemRepository {
+import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.zuqongtch.entity.MenuItem;
+
+@Repository
+public interface MenuItemRepository extends JpaRepository<MenuItem, Long> {
+    List<MenuItem> findByCategoryId(Long categoryId);
+
+    List<MenuItem> findByAvailableTrue();
+
+    List<MenuItem> findByNameContainingIgnoreCase(String name);
 }
